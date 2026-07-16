@@ -1,25 +1,30 @@
+/* Reset */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#f4f4f4;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#eef3f8;
 }
+
+/* Map */
 
 #map-container{
     position:relative;
     width:100%;
     max-width:1200px;
     margin:20px auto;
+    overflow:hidden;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
 #campusMap{
     width:100%;
     display:block;
-    border-radius:10px;
 }
 
 #routeCanvas{
@@ -31,72 +36,89 @@ body{
     pointer-events:none;
 }
 
-.marker{
+/* Hotspots */
+
+.hotspot{
+    position:absolute;
+    cursor:pointer;
+    background:rgba(0,123,255,.15);
+    border:2px solid transparent;
+    transition:.25s;
+}
+
+.hotspot:hover{
+    border-color:#1976d2;
+    background:rgba(25,118,210,.25);
+}
+
+/* User */
+
+#userLocation{
     position:absolute;
     width:18px;
     height:18px;
-    border-radius:50%;
-    cursor:pointer;
-    transform:translate(-50%,-50%);
-}
-
-.building{
-    background:#e53935;
-    border:2px solid white;
-}
-
-.user{
     background:#2196f3;
+    border-radius:50%;
     border:3px solid white;
-    width:20px;
-    height:20px;
-}
-
-.hidden{
+    transform:translate(-50%,-50%);
+    z-index:20;
     display:none;
 }
 
+/* Popup */
+
 #popup{
     position:fixed;
-    bottom:20px;
     left:50%;
+    bottom:20px;
     transform:translateX(-50%);
-    width:320px;
+    width:340px;
     background:white;
-    border-radius:12px;
+    border-radius:18px;
     padding:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,.25);
+    box-shadow:0 10px 35px rgba(0,0,0,.25);
+    display:none;
     z-index:999;
 }
 
 #popup h2{
-    margin-bottom:10px;
+    margin-bottom:12px;
+    color:#0b4ea2;
 }
 
 #popup p{
-    margin-bottom:15px;
-    line-height:1.5;
+    color:#444;
+    line-height:1.6;
+    margin-bottom:18px;
 }
 
 #navigateBtn{
     width:100%;
     padding:12px;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
     background:#1976d2;
     color:white;
-    font-size:16px;
     cursor:pointer;
+    font-size:16px;
 }
 
 #navigateBtn:hover{
-    background:#1258a7;
+    background:#1256a3;
 }
 
 #closePopup{
     float:right;
     border:none;
     background:none;
-    font-size:24px;
+    font-size:26px;
     cursor:pointer;
+}
+
+@media(max-width:700px){
+
+    #popup{
+        width:90%;
+    }
+
 }
