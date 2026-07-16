@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSU Interactive Campus Map</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="map-container">
+
+    <!-- Campus Map -->
+    <img src="map.png" id="campusMap">
+
+    <!-- Canvas for Navigation Line -->
+    <canvas id="routeCanvas"></canvas>
+
+    <!-- User Location -->
+    <div id="userLocation" class="marker user hidden"></div>
+
+    <!-- Building Markers -->
+    <div id="markers"></div>
+
+</div>
+
+<!-- Popup -->
+
+<div id="popup" class="hidden">
+
+    <button id="closePopup">&times;</button>
+
+    <h2 id="buildingName"></h2>
+
+    <p id="buildingDescription"></p>
+
+    <button id="navigateBtn">
+        Navigate
+    </button>
+
+</div>
+
+<script src="buildings.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
